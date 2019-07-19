@@ -19,6 +19,19 @@ using namespace std;
   std::cout << str;
 */
 
+void menu ()
+{
+	cout<<"Welcome to the brand new “Sticky Notes”!"<<endl;
+	cout<<"Here is the list of operation this program offers:"<<endl;
+	cout<<"1- Add new user"<<endl;
+	cout<<"2- Add new note/n"
+        <<"3- View notes for a specific user/n"
+        <<"4- Exit"<<endl;
+
+
+
+
+}
 
 int main()
 {
@@ -47,10 +60,6 @@ cout<<""4- Exit;
 		cout<<"invalid choise"<<endl;
 	}
 
-	
-	system("pause");
-	return 0;
-}
 	
 	system("pause");
 	return 0;
