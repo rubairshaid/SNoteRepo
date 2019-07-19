@@ -1,0 +1,7 @@
+*.sdf
+*.sln
+*.exe
+*.tlog
+SNProject/
+Debug/
+SNProject.v11.suo
