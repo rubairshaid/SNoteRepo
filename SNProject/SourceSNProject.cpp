@@ -22,8 +22,34 @@ using namespace std;
 
 int main()
 {
-	
+	int num;
 
+	menu();
+	cin>>num;
+
+	switch(num)
+	{
+	case 1:
+
+		break;
+	case 2:
+
+		break;
+	case 3:
+
+		break;
+	case 4:
+
+		break;
+
+	default:
+		cout<<"invalid choise"<<endl;
+	}
+
+	
+	system("pause");
+	return 0;
+}
 	
 	system("pause");
 	return 0;
