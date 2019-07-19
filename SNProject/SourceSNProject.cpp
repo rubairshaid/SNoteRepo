@@ -27,10 +27,6 @@ void menu ()
 	cout<<"2- Add new note/n"
         <<"3- View notes for a specific user/n"
         <<"4- Exit"<<endl;
-
-
-
-
 }
 
 int main()
@@ -43,16 +39,14 @@ int main()
 	switch(num)
 	{
 	case 1:
-cout<<"1- Add new use";
 		break;
 	case 2:
-cout<<"2- Add new note";
 		break;
 	case 3:
-cout<<"3- View notes for a specific user";
+
 		break;
 	case 4:
-cout<<""4- Exit;
+
 
 		break;
 
