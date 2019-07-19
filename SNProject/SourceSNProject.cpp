@@ -24,9 +24,9 @@ void menu ()
 	cout<<"Welcome to the brand new “Sticky Notes”!"<<endl;
 	cout<<"Here is the list of operation this program offers:"<<endl;
 	cout<<"1- Add new user"<<endl;
-	cout<<"2- Add new note/n"
-        <<"3- View notes for a specific user/n"
-        <<"4- Exit"<<endl;
+	cout<<"2- Add new note"<<endl;
+        cout<<"3- View notes for a specific user"<<endl;
+        cout<<"4- Exit"<<endl;
 }
 
 int main()
