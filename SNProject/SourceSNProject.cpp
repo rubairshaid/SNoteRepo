@@ -7,18 +7,7 @@
 #pragma warning(disable : 4996).
 using namespace std;
 
-/*time_t rawtime;
-  struct tm * timeinfo;
-  char buffer[80];
 
-  time (&rawtime);
-  timeinfo = localtime(&rawtime);
-
-  strftime(buffer,sizeof(buffer),"%d-%m-%Y %H:%M:%S",timeinfo);
-  std::string str(buffer);
-
-  std::cout << str;
-*/
 
 void menu ()
 {
@@ -36,11 +25,20 @@ void menu ()
 int main()
 {
 	int num;char ch;
-	string Fname,Lname;
+	string Fname,Lname,note;
 	menu();
 	cin>>num;
 	ifstream fin;
 	ofstream fout;
+
+	time_t rawtime;
+  struct tm * timeinfo;
+  char buffer[80];
+
+  
+
+
+
 
 	switch(num)
 	{
@@ -62,30 +60,50 @@ int main()
 		system("cls");
 		menu();
 		break;
+
+
 	case 2:
- system("cls");
-		    cout << "Please enter your full name "<<endl;
-			cout<<"first Name :  ";
+			system("cls");
+			cout<<"Let’s add a new note ..."<<endl;
+		    cout << "Please enter your full name first:  ";
 			cin >> Fname;
-			cout << "Last Name :   ";
 			cin>>Lname;
-			cout << " full name :" << Fname <<" "<< Lname<<endl;
+			Fname+=Lname;
 			fin.open( Fname);
-			if (fin.is_open()) {
+			if(!fin)
+				cout<<"notedkfhsd"<<endl;
+			else {
 			
-				cout << "Your record is found, Iâ€™m now opening your file â€¦."<<endl;
-				cout << "Ready!";
+				cout << "Your record is found, I’m now opening your file …."<<endl;
+				cout << "Ready!"<<endl;
+				cout<<"Please enter your note:"<<endl;
 				cin.get(ch);
-				Fname += Lname;
-				fin.open(Fname);
-				cout << "Please enter your note:";
-				
+				getline(cin,note);
+				cout<<"##"<<endl;
+				cout<<endl;
+				cout<<"Your note has been well received, 1 second while saving it …."<<endl;
+				fin.close();
+				ofstream  fout(Fname, ios_base::out | ios_base::app );
+
+				time (&rawtime);
+                timeinfo = localtime(&rawtime);
+
+                strftime(buffer,sizeof(buffer),"%d-%m-%Y %H:%M:%S",timeinfo);
+                std::string str(buffer);
+
+                fout << str<<endl;
+				fout<<note<<endl;
+				fout<<endl;
+				cout<<"Done!"<<endl;
+				fout.close();
+				cin.get(ch);
+				menu();
 			
 			}
 			
 			
-			system("cls");
-			menu();
+		
+		
 			
 			
 			
