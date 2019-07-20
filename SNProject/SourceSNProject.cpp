@@ -22,7 +22,7 @@ using namespace std;
 
 void menu ()
 {
-	cout<<"Welcome to the brand new �Sticky Notes�!"<<endl;
+	cout<<"Welcome to the brand new “Sticky Notes”!"<<endl;
 	cout<<"Here is the list of operation this program offers:"<<endl;
 	cout<<"1- Add new user"<<endl;
 	cout<<"2- Add new note "<<endl;
@@ -63,7 +63,33 @@ int main()
 		menu();
 		break;
 	case 2:
-
+ system("cls");
+		    cout << "Please enter your full name "<<endl;
+			cout<<"first Name :  ";
+			cin >> Fname;
+			cout << "Last Name :   ";
+			cin>>Lname;
+			cout << " full name :" << Fname <<" "<< Lname<<endl;
+			fin.open( Fname);
+			if (fin.is_open()) {
+			
+				cout << "Your record is found, I’m now opening your file …."<<endl;
+				cout << "Ready!";
+				cin.get(ch);
+				Fname += Lname;
+				fin.open(Fname);
+				cout << "Please enter your note:";
+				
+			
+			}
+			
+			
+			system("cls");
+			menu();
+			
+			
+			
+			
 		break;
 	case 3:
 
