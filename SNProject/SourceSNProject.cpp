@@ -11,7 +11,7 @@ using namespace std;
 
 void menu ()
 {
-	cout<<"Welcome to the brand new “Sticky Notes”!"<<endl;
+	cout<<"Welcome to the brand new â€œSticky Notesâ€!"<<endl;
 	cout<<"Here is the list of operation this program offers:"<<endl;
 	cout<<"1- Add new user"<<endl;
 	cout<<"2- Add new note "<<endl;
@@ -64,7 +64,7 @@ int main()
 
 	case 2:
 			system("cls");
-			cout<<"Let�s add a new note ..."<<endl;
+			cout<<"Let’s add a new note ..."<<endl;
 		    cout << "Please enter your full name first:  ";
 			cin >> Fname;
 			cin>>Lname;
@@ -74,14 +74,14 @@ int main()
 				cout<<"notedkfhsd"<<endl;
 			else {
 			
-				cout << "Your record is found, I�m now opening your file �."<<endl;
+				cout << "Your record is found, I’m now opening your file …."<<endl;
 				cout << "Ready!"<<endl;
 				cout<<"Please enter your note:"<<endl;
 				cin.get(ch);
 				getline(cin,note);
 				cout<<"##"<<endl;
 				cout<<endl;
-				cout<<"Your note has been well received, 1 second while saving it �."<<endl;
+				cout<<"Your note has been well received, 1 second while saving it …."<<endl;
 				fin.close();
 				ofstream  fout(Fname, ios_base::out | ios_base::app );
 
@@ -110,6 +110,31 @@ int main()
 			
 		break;
 	case 3:
+			system("cls");
+		cout << "Retrieve your notes? Absolutely! " << endl;
+		cout << "Please let know your full name first:  ";
+		cin >> Fname;
+		cin >> Lname;
+		Fname += Lname;
+		fin.open(Fname);
+		if (!fin)
+			cout << "Umm, can’t find any saved notes for you." << endl;
+		else
+		{
+			cout << "Found it!"<<endl;
+			cout << "Here are your stored notes:" << endl;
+			Fname += Lname;
+			ifstream input_stream(Fname);
+			if (!input_stream) cerr << "Can't open input file!";
+			vector<string> text;
+			string line;
+			while (getline(input_stream, line)) {
+			
+				text.push_back(line);
+			}
+
+
+		}
 
 		break;
 	case 4:
