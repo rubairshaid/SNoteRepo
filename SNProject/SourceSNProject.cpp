@@ -110,7 +110,7 @@ int main()
 			
 		break;
 	case 3:
-			system("cls");
+		system("cls");
 		cout << "Retrieve your notes? Absolutely! " << endl;
 		cout << "Please let know your full name first:  ";
 		cin >> Fname;
@@ -123,15 +123,13 @@ int main()
 		{
 			cout << "Found it!"<<endl;
 			cout << "Here are your stored notes:" << endl;
-			Fname += Lname;
+	
 			ifstream input_stream(Fname);
 			if (!input_stream) cerr << "Can't open input file!";
-			vector<string> text;
-			string line;
-			while (getline(input_stream, line)) {
-			
-				text.push_back(line);
-			}
+
+			fout << str << endl;
+			fout << note << endl;
+			fout << endl;
 
 
 		}
