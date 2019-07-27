@@ -4,7 +4,7 @@
 #include<fstream>
 #include<time.h>
 #include<ctime>
-#pragma warning(disable : 4996).
+#pragma warning(disable : 4996)
 using namespace std;
 
 
@@ -24,7 +24,7 @@ void menu ()
 }
 int main()
 {
-	int num;char ch;
+	int num,cnt;char ch;
 	string Fname,Lname,note;
 	menu();
 	ifstream fin;
@@ -63,8 +63,8 @@ int main()
 
 
 	case 2:
-			system("cls");
-			cout<<"Let’s add a new note ..."<<endl;
+			system("cls")
+;			cout<<"Let’s add a new note ..."<<endl;
 		    cout << "Please enter your full name first:  ";
 			cin >> Fname;
 			cin>>Lname;
@@ -74,7 +74,7 @@ int main()
 			{
 				cout<<"Oh! Sorry the user name was not found, please check the name again and if this is your first time here, please go ahead and create a new user from the main menu ..."<<endl;
 				cin.get(ch);
-				menu();
+				
 			}
 			else {
 			
@@ -101,10 +101,11 @@ int main()
 				cout<<"Done!"<<endl;
 				fout.close();
 				cin.get(ch);
-				menu();
-			
+				
 			}
-			
+			system("cls");
+			menu();
+
 		break;
 	case 3:
 
@@ -116,29 +117,39 @@ int main()
 		cin >> Lname;
 		Fname += Lname;
 		fin.open(Fname);
-		if (!fin)
+
+		cnt=0;
+		while(fin>>note && cnt==0)
+			cnt++;
+
+		if (cnt==0)
+		{
 			cout << "Umm, can’t find any saved notes for you." << endl;
+			cin.get(ch);
+		}
 		else
 		{
+			fin.close();
+			fin.open(Fname);
 			cout << "Found it!"<<endl;
 			cout << "Here are your stored notes:" << endl;
+			cout<<"--------------------------"<<endl;
 
-	
-			ifstream input_stream(Fname);
-			if (!input_stream) cerr << "Can't open input file!";
-
+			while (getline(fin,note) )
+				cout<<note<<endl;
 			
-			while (getline(input_stream, line)) {
-			
-				
-			}
-
-
+			cout<<"---------------------------"<<endl;
+			cout<<"Happy to serve you :)"<<endl;
+			cin.get(ch);
+		
 		}
-
+			fin.close();
+            cin.get(ch);
+			system("cls");
+			menu();
 		break;
 	case 4:
-		return ;	
+		return 0;	
 		break;
 
 	default:
