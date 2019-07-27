@@ -130,18 +130,10 @@ int main()
 			ifstream input_stream(Fname);
 			if (!input_stream) cerr << "Can't open input file!";
 
-			fout << str << endl;
-			fout << note << endl;
-			fout << endl;
-
-		
-			ifstream input_stream(Fname);
-			if (!input_stream) cerr << "Can't open input file!";
-			vector<string> text;
-			string line;
+			
 			while (getline(input_stream, line)) {
 			
-				text.push_back(line);
+				
 			}
 
 
