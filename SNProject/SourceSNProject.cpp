@@ -27,7 +27,6 @@ int main()
 	int num;char ch;
 	string Fname,Lname,note;
 	menu();
-	cin>>num;
 	ifstream fin;
 	ofstream fout;
 
@@ -37,7 +36,8 @@ int main()
 
   
 
-
+  while(cin>>num )
+  {
 
 
 	switch(num)
@@ -71,7 +71,11 @@ int main()
 			Fname+=Lname;
 			fin.open( Fname);
 			if(!fin)
-				cout<<"notedkfhsd"<<endl;
+			{
+				cout<<"Oh! Sorry the user name was not found, please check the name again and if this is your first time here, please go ahead and create a new user from the main menu ..."<<endl;
+				cin.get(ch);
+				menu();
+			}
 			else {
 			
 				cout << "Your record is found, I’m now opening your file …."<<endl;
@@ -101,26 +105,19 @@ int main()
 			
 			}
 			
-			
-		
-		
-			
-			
-			
-			
 		break;
 	case 3:
 
 		break;
 	case 4:
-
+		return ;	
 		break;
 
 	default:
 		cout<<"invalid choise"<<endl;
 	}
 
-	
+  }
 	system("pause");
 	return 0;
 }
