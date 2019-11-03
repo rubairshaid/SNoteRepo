@@ -1,4 +1,4 @@
-#include<iostream>
+ #include<iostream>
 #include<string>
 #include<iomanip>
 #include<fstream>
@@ -11,7 +11,7 @@ using namespace std;
 
 void menu ()
 {
-	cout<<"Welcome to the brand new “Sticky Notes”!"<<endl;
+	cout<<"Welcome to the brand new â€œSticky Notesâ€!"<<endl;
 	cout<<"Here is the list of operation this program offers:"<<endl;
 	cout<<"1- Add new user"<<endl;
 	cout<<"2- Add new note "<<endl;
@@ -64,7 +64,7 @@ int main()
 
 	case 2:
 			system("cls");
-			cout<<"Let�s add a new note ..."<<endl;
+			cout<<"Let’s add a new note ..."<<endl;
 		    cout << "Please enter your full name first:  ";
 			cin >> Fname;
 			cin>>Lname;
@@ -78,14 +78,14 @@ int main()
 			}
 			else {
 			
-				cout << "Your record is found, I�m now opening your file �."<<endl;
+				cout << "Your record is found, I’m now opening your file …."<<endl;
 				cout << "Ready!"<<endl;
 				cout<<"Please enter your note:"<<endl;
 				cin.get(ch);
 				getline(cin,note);
 				cout<<"##"<<endl;
 				cout<<endl;
-				cout<<"Your note has been well received, 1 second while saving it �."<<endl;
+				cout<<"Your note has been well received, 1 second while saving it …."<<endl;
 				fin.close();
 				ofstream  fout(Fname, ios_base::out | ios_base::app );
 
